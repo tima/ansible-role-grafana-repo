@@ -1,0 +1,10 @@
+- name: Add InfluxData repository file [RHEL/CentOS]
+  yum_repository:
+    name: grafana 
+    description: "Grafana Repository - {{ ansible_distribution }} $releasever"
+    baseurl: "{{ grafana_repo_yum_baseurl }}"
+    gpgcheck:  yes
+    gpgkey: "https://packagecloud.io/gpg.key https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana"
+    sslclientcert: "/etc/pki/tls/certs/ca-bundle.crt"
+  when: ansible_os_family == "RedHat"
+

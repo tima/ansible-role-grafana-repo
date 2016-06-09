@@ -1,0 +1,13 @@
+- block:
+
+  - name: Import Grafana GPG signing key [Debian/Ubuntu]
+    apt_key:
+      url: https://packagecloud.io/gpg.key
+      state: present
+
+  - name: Add Grafana repository [Debian/Ubuntu]
+    apt_repository:
+      repo: "{{ grafana_repo_apt_sourcing }}"
+      state: latest
+
+when: ansible_os_family == "Debian"
