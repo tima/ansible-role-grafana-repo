@@ -8,6 +8,6 @@
   - name: Add Grafana repository [Debian/Ubuntu]
     apt_repository:
       repo: "{{ grafana_repo_apt_sourcing }}"
-      state: latest
+      state: present
 
-when: ansible_os_family == "Debian"
+  when: ansible_os_family == "Debian"

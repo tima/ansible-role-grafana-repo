@@ -1,4 +1,4 @@
-- name: Add InfluxData repository file [RHEL/CentOS]
+- name: Add Grafana repository file [RHEL/CentOS]
   yum_repository:
     name: grafana 
     description: "Grafana Repository - {{ ansible_distribution }} $releasever"
