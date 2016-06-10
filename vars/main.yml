@@ -1,6 +1,5 @@
 ---
 # vars file for grafana-repo
-grafana_repo_channel: stable
 grafana_repo_base_url: "https://packagecloud.io/grafana/{{ grafana_repo_channel }}"
 grafana_repo_yum_baseurl: "{{ grafana_repo_base_url }}/el/$releasever/$basearch"
 grafana_repo_apt_sourcing: "deb {{ grafana_repo_base_url }}/debian/ {{ ansible_distribution_release | lower }} main"
