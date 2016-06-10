@@ -1,6 +1,6 @@
-- name: Add Grafana repository file [RHEL/CentOS]
+- name: Add Grafana {{ grafana_repo_channel }} repository [RHEL/CentOS]
   yum_repository:
-    name: grafana 
+    name: "grafana-{{ grafana_repo_channel }}" 
     description: "Grafana Repository - {{ ansible_distribution }} $releasever"
     baseurl: "{{ grafana_repo_yum_baseurl }}"
     gpgcheck:  yes

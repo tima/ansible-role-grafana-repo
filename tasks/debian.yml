@@ -5,7 +5,7 @@
       url: https://packagecloud.io/gpg.key
       state: present
 
-  - name: Add Grafana repository [Debian/Ubuntu]
+  - name: Add Grafana {{ grafana_repo_channel }} repository [Debian/Ubuntu]
     apt_repository:
       repo: "{{ grafana_repo_apt_sourcing }}"
       state: present
