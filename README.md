@@ -1,38 +1,50 @@
-Role Name
-=========
+# Ansible Role: grafana-repo
 
-A brief description of the role goes here.
+Sets up the Grafana package repository on RedHat/CentOS or Debian/Ubuntu Linux OS family 
+servers.
 
-Requirements
-------------
+## Requirements
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+None
 
-Role Variables
---------------
+## Role Variables
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+Available variables are listed below with default values (see `defaults/main.yml`):
 
-Dependencies
-------------
+    grafana_repo_channel: stable
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+This variable defines the repo channel to setup. The Grafana repo channels available 
+are "stable" and "testing." 
 
-Example Playbook
-----------------
+## Dependencies
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+None
+
+## Example Playbook
+
+The most basic usage of this role in a play is as follows:
 
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - role: 'tima.grafana-repo'
 
-License
--------
+To setup the testing channel for Grafana's repository pass in `grafana_repo_channel` 
+with the value of "testing": 
+
+    - hosts: servers
+      roles:
+         - role: 'tima.grafana-repo'
+           grafana_repo_channel: testing
+
+## Contributions and Feedback
+
+Any contributions are welcome. For any bugs or feature requests,
+please open an issue through Github.
+
+## License
 
 BSD
 
-Author Information
-------------------
+## Author
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Created by [Timothy Appnel](https://github.com/tima).
