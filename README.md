@@ -1,5 +1,7 @@
 # Ansible Role: grafana-repo
 
+[![Build Status](https://travis-ci.org/tima/ansible-role-grafana-repo.svg?branch=master)](https://travis-ci.org/tima/ansible-role-grafana-repo)
+
 Sets up the Grafana package repository on RedHat/CentOS or Debian/Ubuntu Linux OS family 
 servers.
 
